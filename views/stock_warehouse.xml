@@ -7,7 +7,11 @@
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="location_type"/>
                 <field name="region"/>
-                <field name="source_location_id"/>
+                <field name="country"/>
+                <field name="state"/>
+                <field name="city"/>
+                <field name="longitude"/>
+                <field name="latitude"/>
             </xpath>
         </field>
     </record>
