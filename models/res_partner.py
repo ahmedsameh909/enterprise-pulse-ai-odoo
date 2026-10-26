@@ -8,8 +8,6 @@ class ResPartner(models.Model):
         ('wholesale', 'Wholesale'),
         ('vip', 'VIP'),
     ])
-    source_customer_id = fields.Char(index=True, copy=False)
-
     _sql_constraints = [
         ('source_id_company_uniq',
          'unique(source_customer_id, company_id)',

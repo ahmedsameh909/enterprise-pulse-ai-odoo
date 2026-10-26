@@ -6,7 +6,6 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='vat']" position="after">
                     <field name="segment"/>
-                    <field name="source_customer_id"/>
             </xpath>
         </field>
     </record>
