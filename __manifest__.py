@@ -13,7 +13,6 @@
     'views/stock_warehouse.xml',
     'views/product_category.xml',
     'views/product_template.xml',
-    'views/sale_order.xml',
  ],
  'assets' : {
  }

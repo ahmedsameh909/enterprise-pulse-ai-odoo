@@ -4,8 +4,5 @@ from . import source_dataset
 from . import res_partner
 from . import stock_location
 from . import stock_warehouse
-from . import stock_location
 from . import product_category
 from . import product_template
-from . import sale_order
-from . import sale_order_line
