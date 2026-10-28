@@ -1,15 +1,16 @@
 from odoo import api, fields, models
 
 class StockWarehouse(models.Model):
-    _inherit = 'stock.warehouse'
+    _name = 'stock.warehouse'
+    _inherit = ['stock.warehouse', 'enterprisepulse.abstract.model']
 
-    street = fields.Char()
-    street2 = fields.Char()
-    city = fields.Char()
-    zip = fields.Char()
-    country_id = fields.Many2one('res.country')
-    state_id = fields.Many2one(
-        'res.country.state',
-        domain="[('country_id', '=?', country_id)]",
-    )
-    phone = fields.Char()
+    location_type = fields.Char(string="Location Type")
+    region = fields.Char(string="Region")
+
+    country = fields.Char(string="Country")
+    state = fields.Char(string="State")
+    city = fields.Char(string="City")
+    latitude = fields.Float(string="Latitude", digits=(10, 7))
+    longitude = fields.Float(string="Longitude", digits=(10, 7))
+
+    source_location_id = fields.Char(string="Source Location")

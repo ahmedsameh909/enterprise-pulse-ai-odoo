@@ -1,0 +1,27 @@
+<odoo>
+    <record id="stock_location_view_inherit_enterprisepulse" model="ir.ui.view">
+        <field name="name">stock.location.form.inherit.enterprisepulse</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='usage']" position="after">
+                <field name="location_type"/>
+                <field name="region"/>
+                <field name="country"/>
+                <field name="state"/>
+                <field name="city"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+                <field name="source_location_id"/>
+            </xpath>
+            <xpath expr="//field[@name='comment']" position="after">
+                <group string="Enterprise Pulse Data Context">
+                    <field name="source_dataset_id"/>
+                    <field name="source_record_id"/>
+                    <field name="create_date" readonly="1"/>
+                    <field name="write_date" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

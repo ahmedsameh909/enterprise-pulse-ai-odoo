@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_category_form_inherit_enterprisepulse" model="ir.ui.view">
+        <field name="name">product.category.form.inherit.enterprisepulse</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="description" placeholder="Category description..."/>
+                <field name="source_category_code"/>
+            </xpath>
+
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <page string="EnterprisePulse AI Data Context" name="ai_data_context">
+                        <group>
+                            <group string="Source Provenance">
+                                <field name="source_dataset_id"/>
+                                <field name="source_record_id"/>
+                            </group>
+                            <group string="Time Information">
+                                <field name="create_date" string="Created At" readonly="1"/>
+                                <field name="write_date" string="Updated At" readonly="1"/>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

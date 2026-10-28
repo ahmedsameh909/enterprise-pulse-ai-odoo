@@ -1,0 +1,19 @@
+<odoo>
+    <record id="sale_order_form_inherit_enterprisepulse" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.enterprisepulse</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Enterprise Pulse Data Context" name="enterprise_pulse_context">
+                    <group>
+                        <field name="source_dataset_id"/>
+                        <field name="source_record_id"/>
+                        <field name="create_date" readonly="1"/>
+                        <field name="write_date" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

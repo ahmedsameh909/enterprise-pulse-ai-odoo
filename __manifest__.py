@@ -9,9 +9,11 @@
     'security/ir.model.access.csv',
     'views/res_company_view.xml',
     'views/res_partner_view.xml',
-    'views/stock_location_view_inherit.xml',
-    'views/stock_warehouse_view_inherit.xml',
-     'views/time_period_view.xml'
+    'views/stock_location.xml',
+    'views/stock_warehouse.xml',
+    'views/product_category.xml',
+    'views/product_template.xml',
+    'views/sale_order.xml',
  ],
  'assets' : {
  }
@@ -19,5 +21,3 @@
  'license': 'LGPL-3',
  'application': True,
  }
-
-

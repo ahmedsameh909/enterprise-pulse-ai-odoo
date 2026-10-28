@@ -1,12 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="res_partner_view_inherit" model="ir.ui.view">
         <field name="name">res.partner.view.inherit</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='vat']" position="after">
-                    <field name="segment"/>
+
+            <!-- 1. وضع حقل segment برة الـ notebook في الشاشة الرئيسية فوق -->
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="segment"/>
             </xpath>
+            <!-- 2. التبويب السفلي بياخد باقي حقول الـ Audit والـ Datasets -->
+            <xpath expr="//notebook" position="inside">
+                <page string="EnterprisePulse AI Context" name="ai_data_context">
+                    <group>
+                        <group string="Source Provenance">
+                            <field name="source_dataset_id"/>
+                            <field name="source_record_id"/>
+                        </group>
+                        <group string="Time Information">
+                            <field name="create_date" string="Created At" readonly="1"/>
+                            <field name="write_date" string="Updated At" readonly="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
         </field>
     </record>
 </odoo>

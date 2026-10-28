@@ -1,9 +1,7 @@
-from odoo import api, fields, models
+from odoo import fields, models
 
 class ResCompany(models.Model):
-    _inherit = 'res.company'
+    _name = 'res.company'
+    _inherit = ['res.company', 'enterprisepulse.abstract.model']
 
-    industry = fields.Char(string="Industry")
-    description = fields.Char(string="Description")
-    created_at = fields.Date(string="Created at")
-    is_active = fields.Boolean(string="Is Active")
+    description = fields.Text(string='Description')

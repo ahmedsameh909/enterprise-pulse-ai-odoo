@@ -1,0 +1,29 @@
+<odoo>
+    <record id="stock_warehouse_view_inherit_enterprisepulse" model="ir.ui.view">
+        <field name="name">stock.warehouse.form.inherit.enterprisepulse</field>
+        <field name="model">stock.warehouse</field>
+        <field name="inherit_id" ref="stock.view_warehouse"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="location_type"/>
+                <field name="region"/>
+                <field name="country"/>
+                <field name="state"/>
+                <field name="city"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+                <field name="source_location_id"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Enterprise Pulse Data Context" name="enterprise_pulse_context">
+                    <group>
+                        <field name="source_dataset_id"/>
+                        <field name="source_record_id"/>
+                        <field name="create_date" readonly="1"/>
+                        <field name="write_date" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

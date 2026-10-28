@@ -1,17 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="res_company_view_inherit" model="ir.ui.view">
-        <field name="name">res.company.view.inherit</field>
+    <record id="view_company_form_inherit_enterprisepulse" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.enterprisepulse</field>
         <field name="model">res.company</field>
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='currency_id']" position="after">
-                <group string="Company Field">
-                    <field name="industry"/>
-                    <field name="description"/>
-                    <field name="created_at"/>
-                    <field name="is_active"/>
-                </group>
+            <xpath expr="//field[@name='website']" position="after">
+                <field name="description" placeholder="Business description..."/>
             </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="EnterprisePulse AI Data Context" name="ai_data_context">
+                    <group>
+                        <group string="Source Provenance">
+                            <field name="source_dataset_id"/>
+                            <field name="source_record_id"/>
+                        </group>
+                        <group string='Time Information'>
+                            <field name="create_date" string="Created At"/>
+                            <field name="write_date" string="Updated At"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            
         </field>
     </record>
 </odoo>
